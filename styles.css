@@ -1,0 +1,37 @@
+body {
+    background-color: #9edff3;
+}
+
+.title {
+    font-size: 2rem;
+}
+
+.app-container {
+    width: 28rem;
+    height: 35rem;
+}
+
+.icon-img {
+    width: 14rem;
+    height: 14rem;
+}
+
+.notification {
+    font-size: 1.6rem;
+}
+
+.temperature {
+    font-size: 1.2rem;
+}
+
+.temperature:hover {
+    cursor: pointer;
+}
+
+.weather-description {
+    font-size: 1.2rem;
+}
+
+.location {
+    font-size: 1.2rem;
+}

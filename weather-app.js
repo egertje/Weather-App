@@ -3,6 +3,7 @@ const iconElement = document.querySelector(".weather-icon");
 const temperatureElement = document.querySelector(".temperature p");
 const descriptionElement = document.querySelector(".weather-description p");
 const windElement = document.querySelector(".wind p");
+
 // dummy weather variable until the real one is filled
 var weather = {
     temperature: {
@@ -11,9 +12,9 @@ var weather = {
     },
     description: 'sunny',
     iconID: '01d',
-    wind: 'Boston',
+    wind: '0 m/s',
 };
-const key = "5571976de9msh1b25761cac784aep1a7dbdjsnf6c9d341be93";
+const apiKeys = "5571976de9msh1b25761cac784aep1a7dbdjsnf6c9d341be93";
 
 // will first check to see if the current browser supports geolocation
 if (navigator.geolocation) {
@@ -42,7 +43,7 @@ function getWeather(latitude, longitude) {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "dark-sky.p.rapidapi.com",
-            "x-rapidapi-key": key
+            "x-rapidapi-key": apiKeys
         }
     })
         .then(function (response) {
@@ -62,8 +63,7 @@ function getWeather(latitude, longitude) {
 
 //function to display the weather that is stored in the weather object
 function displayWeather() {
-    console.log(weather.description);
-    iconElement.innerHTML = `<img src="./imgs/${weather.iconID}.png" class="img-icon"/>`;
+    iconElement.innerHTML = `<img src="./imgs/${weather.iconID}.png" class="icon-img"/>`;
     temperatureElement.innerHTML = `${weather.temperature.value}° <span>C</span>`;
     descriptionElement.innerHTML = weather.description;
     windElement.innerHTML = `Wind Speed: ${weather.wind} m/s`;
